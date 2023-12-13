@@ -1,0 +1,10 @@
+ville(LILLE).
+ville(PARIS).
+ville(LYON).
+ville(NICE).
+ville(MARSEILLE).
+route(LILLE,PARIS).
+route(LILLE,NICE).
+route(PARIS,LYON).
+route(LYON,MARSEILLE).
+route(LYON,NICE).

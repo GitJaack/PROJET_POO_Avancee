@@ -1,0 +1,11 @@
+ville(A).
+ville(B).
+ville(C).
+ville(D).
+ville(E).
+route(A,B).
+route(A,D).
+route(B,C).
+route(B,E).
+route(C,D).
+recharge(B).
