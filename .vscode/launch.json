@@ -6,6 +6,14 @@
   "configurations": [
     {
       "type": "java",
+      "name": "TestMain",
+      "request": "launch",
+      "mainClass": "up.mi.yjcc.TestMain",
+      "args": "C:\\Users\\Jack\\Documents\\PROJET\\PROJET_POO_Avancee\\Borne_recharge\\bd.ca",
+      "projectName": "PROJET_POO_Avancee_6227241a"
+    },
+    {
+      "type": "java",
       "name": "Current File",
       "request": "launch",
       "mainClass": "${file}"

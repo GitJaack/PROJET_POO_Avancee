@@ -707,6 +707,7 @@ public class CommunauteAgglomeration {
                         System.out.println();
                         break;
                     case 2:
+                        communauteRespecteContrainte();
                         resoudreAutomatiquement(CA, k);
                         System.out.println("*** Résultat après la résolution automatique ***");
                         communauteApresResoudreAutomatique(CA);
