@@ -635,6 +635,31 @@ public class CommunauteAgglomeration {
         return true;
     }
 
+    public boolean verifieContrainte() {
+        // Parcours les villes
+        for (Ville ville : villes) {
+            // Verifie si la ville n'a pas de recharge
+            if (!ville.isRecharge()) {
+                boolean aVoisinAvecRecharge = false;
+
+                // Parcours les voisins de la ville
+                for (Ville voisin : ville.getVoisins()) {
+                    // Verifie si voisin a une recharge
+                    if (voisin.isRecharge()) {
+                        aVoisinAvecRecharge = true;
+                        break;
+                    }
+                }
+                // Verifie si la communaute respecte pas la contrainte
+                if (!aVoisinAvecRecharge) {
+                    return false;
+                }
+
+            }
+        }
+        return true;
+    }
+
     /**
      * Menu pour resoudre la contrainte manuellement
      * 
@@ -781,27 +806,41 @@ public class CommunauteAgglomeration {
      * @return la communaute d'agglomeration
      */
     public CommunauteAgglomeration resoudreAutomatiquement(CommunauteAgglomeration CA, int k) {
-        int i = 0; // Initialise le compteur d'itérations à zéro
+        int i = 0;
         int scoreCourant = score(CA); // Calcule le score initial de la communauté
-        // Boucle de résolution automatique avec au plus k itérations
-        while (i < k) {
-            Ville v = villeAleatoire(CA);// Sélectionne aléatoirement une ville dans la communauté
+        CommunauteAgglomeration meilleureSolution = CA; // Utilise la communauté actuelle comme meilleure solution
 
-            if (v.isRecharge()) {
-                v.setRecharge(false);
-            } else {
-                v.setRecharge(true);
-            }
+        do {
+            Ville v = villeAleatoire(meilleureSolution); // Sélectionne aléatoirement une ville dans la meilleure
+                                                         // solution
 
-            // Vérifie si la modification a amélioré le score
-            if (score(CA) < scoreCourant) {
-                i = 0; // Réinitialise le compteur si le score s'améliore
-                scoreCourant = score(CA); // Met à jour le score courant
+            // Sauvegarde l'état actuel de recharge de la ville
+            boolean etatInitialRecharge = v.isRecharge();
+
+            // Inverser l'état de recharge de la ville
+            v.setRecharge(!etatInitialRecharge);
+
+            // Vérifie si la modification respecte la contrainte d'accessibilité
+            if (verifieContrainte()) {
+                int nouveauScore = score(meilleureSolution);
+
+                // Vérifie si la modification a amélioré le score
+                if (nouveauScore <= scoreCourant) {
+                    i = 0;
+                    scoreCourant = nouveauScore; // Met à jour le score courant
+                } else {
+                    // Annule la modification si elle n'améliore pas le score
+                    v.setRecharge(etatInitialRecharge);
+                    i++;
+                }
             } else {
-                i++; // Incrémente le compteur d'itérations
+                // Annule la modification si elle ne respecte pas la contrainte
+                v.setRecharge(etatInitialRecharge);
+                i++;
             }
-        }
-        return CA;// Retourne la communauté d'agglomération après la résolution automatique
+        } while (i < k);
+
+        return meilleureSolution;
     }
 
     /**

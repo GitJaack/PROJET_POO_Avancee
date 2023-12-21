@@ -7,7 +7,7 @@ import java.util.Scanner;
  */
 public class TestMain {
     public static void main(String[] args) {
-        // Initialisation des variables
+        // Initialisat22ion des variables
         Scanner sc = new Scanner(System.in);
         CommunauteAgglomeration communaute = new CommunauteAgglomeration();
         // Prend les arguments passés dans la ligne de commande

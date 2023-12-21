@@ -24,4 +24,4 @@ Prend en charge le chargement de données à partir d'un fichier.
 Les données peuvent être sauvegardées dans un fichier.
 
 Fonctionnalités qui peuvent être améliorées :
-L'algorithme 2 présenté dans le projet est implementé sans modification personelle.
+L'algorithme 2 ne retourne pas toujours LA solution optimimal mais retourne une communaute avec le score le plus bas en fonction de la ville selectionné au hasard.

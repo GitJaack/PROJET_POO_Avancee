@@ -9,6 +9,14 @@
       "name": "TestMain",
       "request": "launch",
       "mainClass": "up.mi.yjcc.TestMain",
+      //"args": "C:\\Users\\Jack\\Documents\\GitHub\\Projet_POO_Avancee\\Borne_recharge\\bdRechargeContrainte.ca",
+      "projectName": "Projet_POO_Avancee_a33e7fc3"
+    },
+    {
+      "type": "java",
+      "name": "TestMain",
+      "request": "launch",
+      "mainClass": "up.mi.yjcc.TestMain",
       "args": "C:\\Users\\Jack\\Documents\\PROJET\\PROJET_POO_Avancee\\Borne_recharge\\bd.ca",
       "projectName": "PROJET_POO_Avancee_6227241a"
     },
@@ -23,8 +31,8 @@
       "name": "TestMain",
       "request": "launch",
       "mainClass": "up.mi.yjcc.TestMain",
-      "projectName": "PROJET_POO_f5d14798",
-      "args": "C:\\Users\\Jack\\Documents\\PROJET\\PROJET_POO\\Borne_recharge\\bdSansRecharge.ca"
+      "projectName": "PROJET_POO_f5d14798"
+      //"args": "C:\\Users\\Jack\\Documents\\Github\\PROJET_POO\\Borne_recharge\\bdSansRecharge.ca"
     }
   ]
 }
