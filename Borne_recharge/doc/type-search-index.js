@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"up.mi.yjcc","l":"CommunauteAgglomeration"},{"p":"up.mi.yjcc","l":"Menu"},{"p":"up.mi.yjcc","l":"Route"},{"p":"up.mi.yjcc","l":"TestMain"},{"p":"up.mi.yjcc","l":"Ville"}];updateSearchResults();

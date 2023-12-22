@@ -7,7 +7,7 @@ import java.util.Scanner;
  */
 public class TestMain {
     public static void main(String[] args) {
-        // Initialisat22ion des variables
+        // Initialisation des variables
         Scanner sc = new Scanner(System.in);
         CommunauteAgglomeration communaute = new CommunauteAgglomeration();
         // Prend les arguments passés dans la ligne de commande
@@ -20,6 +20,8 @@ public class TestMain {
                 System.out.println("Erreur lors du chargement du fichier : " + e.getMessage());
             }
         } else {
+            System.out.println("Vous n'avez pas precisé un chemin de fichier.");
+            System.out.println("Configuration vide appliqué.");
             communaute.configurationSansFichierCharge(sc, communaute);
         }
     }
